@@ -1,0 +1,193 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;400;700&display=swap');
+*, ::after, ::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+abbr{
+    text-decoration: none;
+}
+
+:root{
+    --VeryDarkBlue: hsl(235, 21%, 11%);
+    --VeryDarkDesaturatedBlue: hsl(235, 24%, 19%);
+    --LightGrayishBlue: hsl(234, 39%, 85%);
+    --DarkGrayishBlue: hsl(234, 11%, 52%);
+    --VeryDarkGrayishBlue: hsl(233, 14%, 26%);
+}
+
+.ligth {
+    --VeryDarkBlue: hsl(0, 0%, 98%);
+    --VeryDarkDesaturatedBlue: hsl(236, 33%, 92%);
+    --LightGrayishBlue: hsl(0, 0%, 22%);
+    --DarkGrayishBlue: hsl(236, 9%, 61%);
+    --VeryDarkGrayishBlue: hsl(235, 19%, 35%);
+
+}
+
+
+body{
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: var(--VeryDarkBlue);
+    background-image: url('images/bg-mobile-dark.jpg');
+    background-repeat: no-repeat;
+    
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100px;
+}
+
+.header__title{
+    font-size: 43px;
+    font-weight: 700;
+    letter-spacing: 8px;
+    color: #fff;
+}
+
+.formTodo{
+    width: max-content;
+    height: 90px;
+    margin: 0 auto;    
+}
+.formTodo__ctn{
+    position: relative;
+    width: 320px;
+    display: flex;
+    overflow: hidden;
+    border-radius: 4px;
+    background-color: var(--VeryDarkDesaturatedBlue);
+    box-shadow: 0px 5px 10px #0000006e;
+}
+.formTodo .spanForm{
+    margin-left: 20px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    align-self: center;
+    border: 2px solid var(--DarkGrayishBlue);
+}
+.formTodo__input{
+    background-color: var(--VeryDarkDesaturatedBlue);
+    border: none;
+    width: 80%;
+    height: 50px;
+    outline: none;
+    padding: 0 10px;
+    color: var(--LightGrayishBlue);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+}
+.todoBody{
+    margin: 20px 0;
+    box-shadow: 0 5px 15px #0000004a;
+}
+
+.viewTodos{
+    background-color: var(--VeryDarkDesaturatedBlue);
+    color: var(--DarkGrayishBlue);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 10px;
+    font-weight: bold;
+    
+}
+
+.viewTodos__items--clear,.all,.completed,.active{
+    cursor: pointer;
+    transition: .2s;
+}
+
+.viewTodos__items--clear:hover,.all:hover,.completed:hover,.active:hover{
+    color: var(--LightGrayishBlue);
+}
+
+
+.todo{
+    width: 320px;
+    position: relative;
+    background-color: var(--VeryDarkDesaturatedBlue);
+    border: none;
+    display: flex;
+    align-items: center;
+    min-height: 50px;
+    max-height: max-content;   
+    border-bottom: 1px solid var(--DarkGrayishBlue);
+    padding: 0 10px;
+    color: var(--LightGrayishBlue);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.todo p{
+    word-break: break-word;
+    padding: 20px 25px 20px 60px;
+}
+
+.xmark{
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+    filter: invert(50);
+    transition: .2s;
+}
+.xmark:hover{
+    transform: scale(1.2);
+}
+
+.spanCreated{
+    position: absolute;
+    margin: 0 20px;
+    width: 25px;
+    height: 25px;
+    left: 10px;
+    border-radius: 50%;
+    align-self: center;
+    border: 2px solid var(--DarkGrayishBlue);
+    
+}
+
+.options{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 40%;
+    height: 50px;
+}
+
+
+.todo.pressed .spanCreated{
+    background-image: url('images/icon-check.svg'), linear-gradient(to right, #55DDFF, #C058F3) ;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.todo.pressed{
+    text-decoration: line-through;
+    color: var(--DarkGrayishBlue);
+} 
+
+@media screen and (min-width:375px){
+    body{
+        background-image: url('images/bg-desktop-dark.jpg');
+        background-position: center;
+    }
+}
+
+@media screen and (min-width:600px) {
+    .formTodo__ctn{
+        width: 460px;
+    }
+    .viewTodos{
+        font-size: 12px;
+    }
+    .todo{
+        width: 460px;
+    }
+}
