@@ -32,7 +32,7 @@ body{
     background-color: var(--VeryDarkBlue);
     background-image: url('images/bg-mobile-dark.jpg');
     background-repeat: no-repeat;
-    
+    transition: .5s;
 }
 
 .header{
